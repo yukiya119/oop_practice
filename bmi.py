@@ -16,19 +16,14 @@ class BMI*:
 
 class BMI:
     def __init__(self, height_m, weight_kg):
-        self.height_m = height_m
-        self.weight_kg = weight_kg
         self.value = weight_kg / height_m ** 2
+        if not (10 <= self.value <= 40):
+            raise ValueError(f"BMIが正常範囲を外れていますぜ!!!{self.value}")
 
-    # def calc_bmi(self):
-
-
-# 体重÷身長の2乗
-#         return self.weight_kg / self.height_m ** 2
+    def __str__(self):
+        return f"{self.value:.2f}"  # 小数点第2位まで表示（第3位以下を四捨五入)
 
 
 # BMIクラスのインスタンス化
-noriya = BMI(height_m=1.7, weight_kg=65)
-print(noriya.height_m)  # 1.7
-print(noriya.weight_kg)  # 65
-print(noriya.value)  # 22.49134948096886
+yukiya = BMI(height_m=1.73, weight_kg=73)
+print(yukiya)
