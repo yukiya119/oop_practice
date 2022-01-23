@@ -14,7 +14,7 @@ class UserName:
         # nameのチェック処理
         if not (4 <= len(name) <= 20):
             raise ValueError(f'{name}はルール違反です')
-        self.name = name
+        self.name = name  # インスタンス化したことで、「名前」が必須項目化されたらしい
 
     # 大文字にする処理
     def battle_name(self):
